@@ -4,7 +4,7 @@ export const dosLitros: Product[] = [
     {
         id: 19,
         name: 'Costo envase de 5 litros',
-        image: '/public/magistral',
+        image: '/magistral',
         description: 'Puede cambiarlo limpio y con tapa',
         price: 1900,
     },

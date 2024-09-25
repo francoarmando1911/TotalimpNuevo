@@ -2,11 +2,11 @@ import React from 'react';
 import Header from '../components/Header';
 import Product from '../components/Products';
 import { useCart } from '../hooks/useCart';
-import { dosLitros } from '../data/dosLitros';
+import { Product as ProductType } from '../types/index';
 
 const DosLitros: React.FC = () => {
-    const { cart, addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart, isEmpty, cartTotal } = useCart('dosLitros');
-    const products = dosLitros; // No necesitas setProducts si solo usas los datos directamente
+    // Cambia el uso directo de dosLitros y usa el hook useCart como en UnLitro y CincoLitros
+    const { data, cart, addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart, isEmpty, cartTotal } = useCart('dosLitros');
 
     return (
         <>
@@ -19,7 +19,7 @@ const DosLitros: React.FC = () => {
                 isEmpty={isEmpty}
                 cartTotal={cartTotal}
                 showCart={true}
-                isCondimentosPage={false}  // Agrega esta línea
+                isCondimentosPage={false}
             />
 
             <main className="container-xl mt-5">
@@ -27,8 +27,8 @@ const DosLitros: React.FC = () => {
                 <hr />
 
                 <div className="row mt-5">
-                    {Array.isArray(products) && products.length > 0 ? (
-                        products.map((product) => (
+                    {Array.isArray(data) && data.length > 0 ? (
+                        data.map((product: ProductType) => (
                             <Product
                                 key={product.id}
                                 product={product}
@@ -51,4 +51,3 @@ const DosLitros: React.FC = () => {
 };
 
 export default DosLitros;
-
