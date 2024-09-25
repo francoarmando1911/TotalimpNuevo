@@ -19,6 +19,7 @@ const UnLitro: React.FC = () => {
                 isEmpty={isEmpty}
                 cartTotal={cartTotal}
                 showCart={true}
+                isCondimentosPage={false}  // Agrega esta línea
             />
 
             <main className="container-xl mt-5">

@@ -16,7 +16,8 @@ const CincoLitros: React.FC = () => {
                 clearCart={clearCart}
                 isEmpty={isEmpty}
                 cartTotal={cartTotal}
-                showCart={true} // o false, según lo que necesites
+                showCart={true}
+                isCondimentosPage={false}  // Agrega esta línea
             />
 
             <main className="container-xl mt-5">

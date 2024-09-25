@@ -204,12 +204,23 @@ export default function Header({
                         style={{
                             background: 'rgba(0, 0, 0, 0.5)',
                             padding: '10px',
-                            borderRadius: '50px'
+                            borderRadius: '50px',
+                            maxWidth: '400px'
                         }}>
-                        <Link to="#" className="btn btn-primary rounded-pill mx-1 d-block d-md-inline-block mb-2 mb-md-0 btn-hover" style={{ padding: '10px 20px' }}>
+                        <Link to="#" className="btn btn-primary rounded-pill d-block d-md-inline-block mb-2 mb-md-0 btn-hover" 
+                        style={{ 
+                            padding: '10px 20px',
+                            fontSize: '1.2em',
+                            marginRight: '5px' 
+                         }}>
                             Limpieza
                         </Link>
-                        <Link to="/condimentos" className="btn btn-primary rounded-pill mx-1 d-block d-md-inline-block mb-2 mb-md-0 btn-hover" style={{ padding: '10px 20px' }}>
+                        <Link to="/condimentos" className="btn btn-primary rounded-pill d-block d-md-inline-block mb-2 mb-md-0 btn-hover" 
+                        style={{ 
+                            padding: '10px 20px' ,
+                            fontSize: '1.2em',
+                            marginLeft: 'auto'
+                            }}>
                             Condimentos
                         </Link>
                     </div>
