@@ -862,13 +862,12 @@ button:not(:disabled),
   position: relative;
 }
 
-.header.condimentos {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/favicon.png");
-  background-position: 50%;
-  background-color: #0dcaf0;
-  /* Puedes cambiar el color si es necesario */
+.header-condimentos {
+  background: url('/btnHome/porLitro.jpeg') no-repeat center center;
   background-size: cover;
 }
+
+
 
 .text-content {
   color: white;

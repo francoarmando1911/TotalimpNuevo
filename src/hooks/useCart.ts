@@ -24,6 +24,7 @@ export const useCart = (type: string) => {
         }
         
         setData(selectedData);
+        console.log("Selected data for type", type, selectedData);
     }, [type]);
 
     const [cart, setCart] = useState<CartItem[]>(initialCart);

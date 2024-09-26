@@ -3,6 +3,8 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Categories from './components/Categories';
 import Header from './components/Header';
 import ProductsList from './components/ProductsList';
+import Navbar from './components/Navbar'; // Importa tu Navbar
+import Condimentos from './pages/condimentos'; // Asegúrate de que esta ruta sea correcta
 import { useCart } from './hooks/useCart';
 
 interface AppProps { }
@@ -14,8 +16,8 @@ const App: React.FC<AppProps> = () => {
   let type = '';
   if (location.pathname === '/unLitro') {
     type = 'unLitro';
-  } else if (location.pathname === '/dosLitro') {
-    type = 'dosLitro';
+  } else if (location.pathname === '/dosLitros') {
+    type = 'dosLitros';
   } else if (location.pathname === '/cincoLitros') {
     type = 'cincoLitros';
   }
@@ -33,18 +35,20 @@ const App: React.FC<AppProps> = () => {
         clearCart={clearCart}
         isEmpty={isEmpty}
         cartTotal={cartTotal}
-        showCart={true} // Siempre mostrar el carrito
+        showCart={true}
         isCondimentosPage={isCondimentosPage}
       />
+
+      <Navbar /> 
 
       <main className="container-xl mt-5">
         <Routes>
           <Route path="/" element={<Categories />} />
           <Route path="/unLitro" element={<ProductsList type="unLitro" />} />
-          <Route path="/dosLitro" element={<ProductsList type="dosLitro" />} />
-          <Route path="/cincoLitros" element={<ProductsList type="cincoLitros" />} /> {/* Corrige aquí */}
+          <Route path="/dosLitros" element={<ProductsList type="dosLitros" />} />
+          <Route path="/cincoLitros" element={<ProductsList type="cincoLitros" />} />
+          <Route path="/condimentos" element={<Condimentos />} /> 
         </Routes>
-
       </main>
 
       <footer className="bg-dark mt-5 py-5">
@@ -57,3 +61,4 @@ const App: React.FC<AppProps> = () => {
 };
 
 export default App;
+

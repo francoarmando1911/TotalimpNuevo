@@ -1,6 +1,5 @@
 import { useState, useMemo } from 'react';
 import type { CartItem, Product } from "../types";
-import { Link } from 'react-router-dom';
 
 type HeaderProps = {
     cart: CartItem[],
@@ -9,10 +8,12 @@ type HeaderProps = {
     decreaseQuantity: (id: Product['id']) => void,
     clearCart: () => void,
     isEmpty: boolean,
-    cartTotal: number, // Asegúrate de incluir esto  
+    cartTotal: number,
     showCart: boolean,
-    isCondimentosPage: boolean; // Asegúrate de incluir esto  
-}; 
+    isCondimentosPage?: boolean; // Puedes usar esto si necesitas verificar en el Header
+    className?: string; 
+};
+
 
 export default function Header({
     cart,
@@ -20,7 +21,8 @@ export default function Header({
     increaseQuantity,
     removeFromCart,
     clearCart,
-    showCart
+    showCart,
+    className 
 }: HeaderProps) {
     const [isCartVisible, setIsCartVisible] = useState(false);
 
@@ -47,7 +49,7 @@ export default function Header({
     };
 
     return (
-        <header className="py-5 header">
+        <header className={`py-5 header ${className}`}>
             <div className="container-xl">
                 <div className="row justify-content-center justify-content-md-between align-items-center">
                     <div className="col-8 col-md-3 d-flex align-items-center">
@@ -198,33 +200,7 @@ export default function Header({
                         </div>
                     </nav>
                 </div>
-                {/* Nueva sección del Navbar con botones */}
-                <div className="row justify-content-center mt-3">
-                    <div className="col-md-6 text-center"
-                        style={{
-                            background: 'rgba(0, 0, 0, 0.5)',
-                            padding: '10px',
-                            borderRadius: '50px',
-                            maxWidth: '400px'
-                        }}>
-                        <Link to="#" className="btn btn-primary rounded-pill d-block d-md-inline-block mb-2 mb-md-0 btn-hover" 
-                        style={{ 
-                            padding: '10px 20px',
-                            fontSize: '1.2em',
-                            marginRight: '5px' 
-                         }}>
-                            Limpieza
-                        </Link>
-                        <Link to="/condimentos" className="btn btn-primary rounded-pill d-block d-md-inline-block mb-2 mb-md-0 btn-hover" 
-                        style={{ 
-                            padding: '10px 20px' ,
-                            fontSize: '1.2em',
-                            marginLeft: 'auto'
-                            }}>
-                            Condimentos
-                        </Link>
-                    </div>
-                </div>
+                
 
 
             </div>
