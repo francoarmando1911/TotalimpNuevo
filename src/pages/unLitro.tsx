@@ -5,7 +5,6 @@ import { useCart } from '../hooks/useCart';
 import { Product as ProductType } from '../types/index';
 
 const UnLitro: React.FC = () => {
-    // Asegúrate de pasar el tipo 'unLitro'
     const { data, cart, addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart, isEmpty, cartTotal } = useCart('unLitro');
 
     return (
@@ -19,7 +18,7 @@ const UnLitro: React.FC = () => {
                 isEmpty={isEmpty}
                 cartTotal={cartTotal}
                 showCart={true}
-                isCondimentosPage={false}  // Agrega esta línea
+                isCondimentosPage={false} 
             />
 
             <main className="container-xl mt-5">

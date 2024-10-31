@@ -3,8 +3,8 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Categories from './components/Categories';
 import Header from './components/Header';
 import ProductsList from './components/ProductsList';
-import Navbar from './components/Navbar'; // Importa tu Navbar
-import Condimentos from './pages/condimentos'; // Asegúrate de que esta ruta sea correcta
+import Navbar from './components/Navbar'; 
+import Condimentos from './pages/condimentos'; 
 import { useCart } from './hooks/useCart';
 
 interface AppProps { }

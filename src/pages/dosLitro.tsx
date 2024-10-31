@@ -5,7 +5,7 @@ import { useCart } from '../hooks/useCart';
 import { Product as ProductType } from '../types/index';
 
 const DosLitros: React.FC = () => {
-    // Cambia el uso directo de dosLitros y usa el hook useCart como en UnLitro y CincoLitros
+    
     const { data, cart, addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart, isEmpty, cartTotal } = useCart('dosLitros');
 
     return (

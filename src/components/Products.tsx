@@ -10,7 +10,7 @@ export type ProductID = Product['id']
 export default function Products({ product, addToCart }: ProductProps) {
     const { id, name, image, description, price } = product;
 
-    // Render a customized description for the product with id: 10  
+
     const renderDescription = () => {
         if (id === 10) {
             return (
@@ -18,7 +18,7 @@ export default function Products({ product, addToCart }: ProductProps) {
                     dangerouslySetInnerHTML={{
                         __html: description,
                     }}
-                    style={{ color: 'red' }} // Red color for the description of the product with id 10  
+                    style={{ color: 'red' }} 
                 />
             );
         }

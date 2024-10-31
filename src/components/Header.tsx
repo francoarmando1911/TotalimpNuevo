@@ -10,7 +10,7 @@ type HeaderProps = {
     isEmpty: boolean,
     cartTotal: number,
     showCart: boolean,
-    isCondimentosPage?: boolean; // Puedes usar esto si necesitas verificar en el Header  
+    isCondimentosPage?: boolean;   
     className?: string;
 };
 

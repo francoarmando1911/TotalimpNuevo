@@ -1,6 +1,4 @@
-// types/index.ts
 
-// Exportación de tipos
 export type Product = {
     id: number;
     name: string;
