@@ -4,7 +4,7 @@ import Product from '../components/Products';
 import { useCart } from '../hooks/useCart';
 
 const CincoLitros: React.FC = () => {
-    const { data, addToCart, cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal } = useCart('cincoLitros');
+    const { cart, addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart, isEmpty, cartTotal, data } = useCart('cincoLitros');
 
     return (
         <>
@@ -17,7 +17,7 @@ const CincoLitros: React.FC = () => {
                 isEmpty={isEmpty}
                 cartTotal={cartTotal}
                 showCart={true}
-                isCondimentosPage={false}  // Agrega esta línea
+                isCondimentosPage={false}  
             />
 
             <main className="container-xl mt-5">

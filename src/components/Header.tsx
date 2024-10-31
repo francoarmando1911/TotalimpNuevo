@@ -10,10 +10,9 @@ type HeaderProps = {
     isEmpty: boolean,
     cartTotal: number,
     showCart: boolean,
-    isCondimentosPage?: boolean; // Puedes usar esto si necesitas verificar en el Header
-    className?: string; 
+    isCondimentosPage?: boolean; // Puedes usar esto si necesitas verificar en el Header  
+    className?: string;
 };
-
 
 export default function Header({
     cart,
@@ -22,7 +21,7 @@ export default function Header({
     removeFromCart,
     clearCart,
     showCart,
-    className 
+    className
 }: HeaderProps) {
     const [isCartVisible, setIsCartVisible] = useState(false);
 
@@ -87,7 +86,7 @@ export default function Header({
                             />
                             {showCart && (
                                 <div
-                                    id="carrito"
+                                    id=""
                                     className={`bg-white p-3 ${isCartVisible ? 'visible' : 'hidden'}`}
                                     style={{
                                         position: 'absolute', right: 0, top: '100%',
@@ -166,43 +165,44 @@ export default function Header({
                                             </p>
                                         </>
                                     )}
-                                    <button
-                                        id="whatsapp-button"
-                                        className="btn btn-whatsapp w-100 mt-3"
-                                        onClick={handleWhatsAppClick}
-                                        disabled={isEmpty}
-                                        aria-disabled={isEmpty}
-                                        style={{
-                                            backgroundColor: '#008069',
-                                            borderColor: '#008069',
-                                            color: 'white',
-                                            marginBottom: '10px'
-                                        }}
-                                    >
-                                        Realizar pedido
-                                    </button>
-                                    <button
-                                        id="empty-cart-button"
-                                        className="btn btn-empty-cart w-100 mt-2"
-                                        onClick={clearCart}
-                                        disabled={isEmpty}
-                                        aria-disabled={isEmpty}
-                                        style={{
-                                            backgroundColor: 'red',
-                                            borderColor: 'red',
-                                            color: 'white'
-                                        }}
-                                    >
-                                        Vaciar carrito
-                                    </button>
+                                    {!isEmpty && (
+                                        <>
+                                            <button
+                                                id="whatsapp-button"
+                                                className="btn btn-whatsapp w-100 mt-3"
+                                                onClick={handleWhatsAppClick}
+                                                disabled={isEmpty}
+                                                aria-disabled={isEmpty}
+                                                style={{
+                                                    backgroundColor: '#008069',
+                                                    borderColor: '#008069',
+                                                    color: 'white',
+                                                    marginBottom: '10px'
+                                                }}
+                                            >
+                                                Realizar pedido
+                                            </button>
+                                            <button
+                                                id="empty-cart-button"
+                                                className="btn btn-empty-cart w-100 mt-2"
+                                                onClick={clearCart}
+                                                disabled={isEmpty}
+                                                aria-disabled={isEmpty}
+                                                style={{
+                                                    backgroundColor: 'red',
+                                                    borderColor: 'red',
+                                                    color: 'white'
+                                                }}
+                                            >
+                                                Vaciar carrito
+                                            </button>
+                                        </>
+                                    )}
                                 </div>
                             )}
                         </div>
                     </nav>
                 </div>
-                
-
-
             </div>
         </header>
     );
