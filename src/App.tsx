@@ -12,7 +12,6 @@ interface AppProps { }
 const App: React.FC<AppProps> = () => {
   const location = useLocation();
 
-  // Determina el tipo basado en la ruta
   let type = '';
   if (location.pathname === '/unLitro') {
     type = 'unLitro';

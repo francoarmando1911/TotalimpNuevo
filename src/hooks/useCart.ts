@@ -10,7 +10,6 @@ export const useCart = (type: string) => {
         return localStorageCart ? JSON.parse(localStorageCart) : [];
     };
 
-    // Determina los productos según el tipo seleccionado
     const [data, setData] = useState<Product[]>([]);
 
     useEffect(() => {
@@ -32,17 +31,15 @@ export const useCart = (type: string) => {
     const MAX_ITEMS = 5;
     const MIN_ITEMS = 1;
 
-    // Actualiza el carrito en local storage cuando cambia
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart));
     }, [cart]);
 
-    // Agregar al carrito
     function addToCart(item: Product) {
         const itemExist = cart.findIndex((product) => product.id === item.id);
 
-        if (itemExist >= 0) { // Existe en el carrito
-            if (cart[itemExist].quantity >= MAX_ITEMS) return; // No se permite agregar más
+        if (itemExist >= 0) { 
+            if (cart[itemExist].quantity >= MAX_ITEMS) return; 
             const updatedCart = cart.map((product, index) =>
                 index === itemExist
                     ? { ...product, quantity: product.quantity + 1 }

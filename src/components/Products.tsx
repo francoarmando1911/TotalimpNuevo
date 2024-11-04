@@ -28,7 +28,7 @@ export default function Products({ product, addToCart }: ProductProps) {
     return (
         <div className="col-md-6 col-lg-4 my-4 d-flex justify-content-center">
             <div className="row align-items-center">
-                {/* Condition to show or hide the image */}
+
                 {id !== 19 && (
                     <div className="col-4">
                         <img className="img-fluid" src={`/${image}.png`} alt="Product image" />
@@ -50,7 +50,6 @@ export default function Products({ product, addToCart }: ProductProps) {
                         ${price}
                     </p>
 
-                    {/* Condition to show or hide the button */}
                     {id !== 19 && (
                         <button
                             type="button"
